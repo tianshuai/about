@@ -1,0 +1,31 @@
+#公共配置
+default: &default
+  adapter: mysql2
+  encoding: utf8
+
+test:
+  <<: *default
+  username: root
+  password:
+  database: about_test
+  pool: 5
+  timeout: 5000
+
+production:
+  <<: *default
+  username: root
+  password:
+  database: about
+  pool: 5
+  timeout: 5000
+
+
+development:
+  <<: *default
+  username: root
+  password:
+  database: about_dev
+  pool: 5
+  timeout: 5000
+
+

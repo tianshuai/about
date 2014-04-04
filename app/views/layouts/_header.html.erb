@@ -1,0 +1,54 @@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">TianShuai</a>
+
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+	<li class="dropdown">
+	  <a href="#">首页</a>
+	<li>
+	  <a href="../help/">帮助</a>
+	</li>
+	<li>
+	  <a href="http://news.bootswatch.com">Blog</a>
+	</li>
+	<li class="dropdown">
+	  <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">更多 <span class="caret"></span></a>
+	  <ul class="dropdown-menu" aria-labelledby="download">
+	    <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
+	    <li><a href="./bootstrap.css">bootstrap.css</a></li>
+	    <li class="divider"></li>
+	    <li><a href="./variables.less">variables.less</a></li>
+	    <li><a href="./bootswatch.less">bootswatch.less</a></li>
+	  </ul>
+	</li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+	<% if signed_in? %>
+	  <li class="dropdown">
+	    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %><b class="caret"></b></a>
+	  <ul class="dropdown-menu">
+	    <li><%= link_to "个人设置", user_edit_info_path %></li>
+	    <%if admin_system?%>
+		<li><%= link_to "系统管理", admin_home_path %></li>
+	    <%end%>
+		<li class="divider"></li>
+		<!--<li class="dropdown-header">Nav header</li>-->
+		<li><%= link_to '注销', signout_path, method: :delete %></li>
+	  </ul>
+	</li>
+	<%else%>
+	  <li><%= link_to "注册", signup_path %></li>
+	  <li><%= link_to "登录", signin_path %></li>
+	<%end%>
+
+      </ul>
+
+    </div>
+  </div>
+</div>
+

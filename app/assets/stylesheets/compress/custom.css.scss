@@ -1,0 +1,265 @@
+//@import "bootstrap";
+
+/*-----------------------------全局样式-------------------------------------*/
+
+ul{list-style:none}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  //text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  //text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.container {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  *zoom: 1;	//兼容ie6/7
+}
+
+.form-signin {
+  width: 300px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.article-body{font-size:14px;}
+.article-body p{color:#333;}
+.article-body img {}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+textarea {
+  height: auto;
+}
+
+
+/* margin padding */
+.m-0{margin:0;}
+.m-5{margin:5px;}
+.m-10{margin:10px;}
+.m-15{margin:15px;}
+.m-20{margin:20px;}
+.mt-5{margin-top:5px;}
+.mb-5{margin-bottom:5px;}
+.ml-5{margin-left:5px;}
+.mr-5{margin-right:5px;}
+.mt-10{margin-top:10px;}
+.mb-10{margin-bottom:10px;}
+.ml-10{margin-left:10px;}
+.mr-10{margin-right:10px;}
+.mt-15{margin-top:15px;}
+.mb-15{margin-bottom:15px;}
+.ml-15{margin-left:15px;}
+.mr-15{margin-right:15px;}
+.mt-20{margin-top:20px;}
+.mt-50{margin-top:50px;}
+.mb-20{margin-bottom:20px;}
+.ml-19{margin-left:19px;}
+.ml-20{margin-left:20px;}
+.mr-20{margin-right:20px;}
+.mt-30{margin-top:30px;}
+.mb-30{margin-bottom:30px;}
+.ml-30{margin-left:30px;}
+.ml-40{margin-left:40px;}
+.ml-50{margin-left:50px;}
+.mr-30{margin-right:30px;}
+.ml-90{margin-left:90px;}
+.ml-93{margin-left:93px;}
+.p-0{padding:0;}
+.pt-0{padding-top:0;}
+.pr-0{padding-top:0;}
+.pb-0{padding-top:0;}
+.pl-0{padding-top:0;}
+.p-5{padding:5px;}
+.p-10{padding:10px;}
+.p-15{padding:15px;}
+.p-20{padding:20px;}
+.pt-5{padding-top:5px;}
+.pb-5{padding-bottom:5px;}
+.pl-5{padding-left:5px;}
+.pr-5{padding-right:5px;}
+.pt-10{padding-top:10px;}
+.pb-10{padding-bottom:10px;}
+.pl-10{padding-left:10px;}
+.pr-10{padding-right:10px;}
+.pt-15{padding-top:15px;}
+.pb-15{padding-bottom:15px;}
+.pl-15{padding-left:15px;}
+.pr-15{padding-right:15px;}
+.pt-20{padding-top:20px;}
+.pb-20{padding-bottom:20px;}
+.pl-20{padding-left:20px;}
+.pl-30{padding-left:30px;}
+.pl-40{padding-left:40px;}
+.pl-50{padding-left:50px;}
+.pr-20{padding-right:20px;}
+
+/* vertical align */
+.va-t{vertical-align:top;}
+.va-b{vertical-align:bottom;}
+.va-m{vertical-align:middle;}
+.ta-c{text-align:center;}
+.ta-l{text-align:left}
+.ta-r{text-align:right}
+.ti-2{text-indent:2em;}
+
+/* blank */
+.blank5, .blank10, .blank15, .blank20, .blank25, .blank30, .blank50, .blank100{clear:both;display:block;overflow:hidden;}
+.blank5{height:5px;}
+.blank10{height:10px;}
+.blank15{height:15px;}
+.blank20{height:20px;}
+.blank25{height:25px;}
+.blank30{height:30px;}
+.blank50{height:50px;}
+.blank100{height:100px;}
+
+/*  鼠标手 */
+.pointer {cursor:pointer;}
+
+/*系统管理--begin*/
+
+/*左侧菜单*/
+.sidebar-menu{
+    border-right: 1px solid #c4c8cb;
+}
+/*一级菜单*/
+.menu-first{
+	display: block;
+    height:45px;
+    line-height:45px;
+    background-color: #e9e9e9;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 0;
+    font-size: 14px;
+	color: grey;
+    font-weight: normal;
+    text-align: center;
+}
+/*一级菜单鼠标划过状态*/
+.menu-first:hover{
+    text-decoration: none;
+    background-color: #d6d4d5;
+    border-top: 1px solid #b7b7b7;
+    border-bottom: 1px solid #acacac;
+}
+/*二级菜单*/
+.menu-second li a{
+    background-color: #f6f6f6;
+    height:31px;
+    line-height:31px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    font-size: 12px;
+    text-align:center;
+}
+/*二级菜单鼠标划过样式*/
+.menu-second li a:hover {
+    text-decoration: none;
+    background-color: #66c3ec;
+    border-top: 1px solid #83ceed;
+    border-bottom: 1px solid #83ceed;
+    border-right: 3px solid #f8881c;
+    border-left: 3px solid #66c3ec;
+}
+/*二级菜单选中状态*/
+.menu-second-selected {
+    background-color: #66c3ec;
+    height:31px;
+    line-height:31px;
+    border-top: 1px solid #83ceed;
+    border-bottom: 1px solid #83ceed;
+    border-right: 3px solid #f8881c;
+    border-left: 3px solid #66c3ec;
+    text-align:center;
+}
+/*覆盖bootstrap的样式*/
+.nav-list,.nav-list li a{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.guide-box .inp-tags{border:1px solid #ccc;padding:4px;}
+.top_tools{background-color:#efefef;padding:5px;border-bottom:1px solid #ccc;}
+.top_tools a.active{background-color:#ee0000;}
+.top_tools a.tip{color:#222;line-height:25px;}
+.top_tools a.tip:hover{color:#ee0000;}
+.sub_operation a{color:#000;}
+.left_operation{float:left;display:inline;margin-right:20px;width:180px;padding-top:5px;}
+.left_operation a:hover{color:#cc0000;text-decoration:underline;background:none;}
+
+
+
+.operate_box{float:left;display:inline;margin-right:10px;border:1px solid #ccc;border-radius:3px;}
+.operate_box a{display:inline-block;width:75px;height:27px;line-height:27px;text-align:center;float:left;}
+.operate_box a:hover{background:#000;color:#fff;text-decoration:none;}
+
+/* 14.table
+---------------------------------------------------------------------- */
+table.admin-box {width:100%;}
+table.admin-box  thead{background-color:#333;color:#fff; }
+table.admin-box  .wb6{border-left:1px solid #ddd;}
+table.admin-box  thead th{padding:10px;font-weight:normal;	}
+table.admin-box  tr td{vertical-align:middle;padding:10px;background-color:#f6f6f6;}
+table.admin-box  p{line-height:24px;}
+table.admin-box a{color:gray;}
+table.admin-box a:hover{color:#ee0000;}
+table.admin-box .user_unaudited p{line-height:20px;}
+table.admin-box a.red{color:#ee0000;}
+table.admin-box td{text-align: left;}
+
+/*系统管理--end*/
+
+
+
+
+/*------------底部------------*/
+.footer{background:#fff;width:1280px;margin:0 auto}

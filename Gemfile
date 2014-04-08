@@ -30,9 +30,6 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'mysql2'
 
-# 加密算法
-gem 'bcrypt-ruby', '3.0.1'
-
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
 end
@@ -46,6 +43,13 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# 加密算法
+gem 'bcrypt-ruby', '~> 3.1'
+
+#分页
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

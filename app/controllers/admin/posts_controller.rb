@@ -39,21 +39,22 @@ class Admin::PostsController < Admin::BaseController
     respond_to do |format|
       if @post.save
         #保存封面图
-        if params[:asset_id]
+        if params[:cover]
           #获得文件/格式
-          file = params[:asset_id]
+          file = params[:cover]
           file_temp = file.tempfile
           file_name = file.original_filename
           #上传
           result = ImageUnit::Upload.save_asset(file_temp,2)
           if result[:result]
-            result[:file_name] = file_name
+            result[:name] = file_name
             result[:relateable_id] = @post.id
             result[:relateable_type] = 'Post'
+	    result[:kind] = 1
             hash = collect_asset(result)
             asset = Asset.new(hash)
             if asset.save
-              @post.update_attribute(:asset_id, asset.id )
+              @post.update(cover_id: asset.id )
             end
           end
         end
@@ -81,23 +82,24 @@ class Admin::PostsController < Admin::BaseController
     respond_to do |format|
       if @post.update(params.require(:post).permit!)
         #保存封面图
-        if params[:asset_id]
+        if params[:cover]
           #获得文件/格式
-          file = params[:asset_id]
+          file = params[:cover]
           file_temp = file.tempfile
           file_name = file.original_filename
           #上传
           result = ImageUnit::Upload.save_asset(file_temp,2)
           if result[:result]
-            result[:file_name] = file_name
+            result[:name] = file_name
             result[:relateable_id] = @post.id
             result[:relateable_type] = 'Post'
+	    result[:kind] = 1
             hash = collect_asset(result)
             asset = Asset.new(hash)
             if asset.save
               #删除原有封面图
               @post.cover.destroy if @post.cover.present?
-              @post.update_attribute(:asset_id, asset.id )
+              @post.update(cover_id: asset.id )
             end
           end
         end

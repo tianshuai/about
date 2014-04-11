@@ -12,8 +12,8 @@ module PublicShowHelper
   end
 
   #图片地址
-  def asset_path(asset_id)
-	File.join(domain_image,asset_id)
+  def asset_path(url)
+    File.join(domain_image, url)
   end
 
   ##
@@ -74,11 +74,11 @@ module PublicShowHelper
 	  name: result[:name],
       file_name: result[:file_name],
 	  file_path: result[:file_path],
-      size: result[:size],
+      size: result[:size] || 0,
       format_type: result[:format],
-      width: result[:width],
-      height: result[:height],
-	  kind: result[:kind]
+      width: result[:width] || 0,
+      height: result[:height] || 0,
+	  kind: result[:kind] || 1
 
     }
   end

@@ -3,8 +3,6 @@ class AssetsController < ApplicationController
 
    def serve
      gridfs_path = env["PATH_INFO"].gsub("/asset/", "")
-	 p 'aaaaaaaaaaaa'
-	 p gridfs_path
      begin
        #gridfs_file = asset_obj(gridfs_path)
 	   

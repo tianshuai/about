@@ -3,9 +3,11 @@
     <td><%=b.id%></td>
 	<td><%= link_to truncate(b.title, length: 10), post_path(b), title: b.title, target: '_blank' %></td>
     <td>
-
-        <span>无</span>
-
+	<% if b.asset.present? %>
+	    <img src="<%= asset_path(b.asset.url) %>" width="80" />
+	<%else%>
+	    <span>无</span>
+	<%end%>
     </td>
 	<td><%=b.category.name if b.category.present?%></td>
 	<td><%=b.user.name if b.user.present?%></td>

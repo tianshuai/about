@@ -3,7 +3,7 @@ class Admin::PostsController < Admin::BaseController
 
   #左侧导航样式
   before_action do
-    @css_admin_posts = true
+    @css_admin_post = true
   end
 
   #分类列表
@@ -45,7 +45,7 @@ class Admin::PostsController < Admin::BaseController
           file_temp = file.tempfile
           file_name = file.original_filename
           #上传
-          result = ImageUnit::Upload.save_asset(file_temp,2)
+          result = ImageUnit::Upload.save_asset(file_temp,1)
           if result[:result]
             result[:name] = file_name
             result[:relateable_id] = @post.id
@@ -88,7 +88,7 @@ class Admin::PostsController < Admin::BaseController
           file_temp = file.tempfile
           file_name = file.original_filename
           #上传
-          result = ImageUnit::Upload.save_asset(file_temp,2)
+          result = ImageUnit::Upload.save_asset(file_temp,1)
           if result[:result]
             result[:name] = file_name
             result[:relateable_id] = @post.id

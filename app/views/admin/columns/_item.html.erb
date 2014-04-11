@@ -4,7 +4,7 @@
 	<td><%= truncate(b.title, length: 12) %></td>
     <td>
 		<% if b.asset.present? %>
-			<%= image_tag( "/#{b.asset.url('s')}", width: 50, height: 50 ) %>
+		    <img src="<%= asset_path(b.asset.url('s')) %>" width="50" />
 		<%else%>
 			<span>无</span>
 		<%end%>

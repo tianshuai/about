@@ -13,7 +13,14 @@
     </ul>
     <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse"><i class=""></i> 内容管理</a>
     <ul id="articleMenu" class="nav nav-list collapse menu-second in">
-		<li class="<%= @css_admin_posts ? 'menu-second-selected' : '' %>"><%= link_to "文章列表", admin_posts_path %></li>
+		<li class="<%= @css_admin_post ? 'menu-second-selected' : '' %>"><%= link_to "内容列表", admin_posts_path %></li>
+    </ul>
+    <a href="#columnMenu" class="nav-header menu-first collapsed" data-toggle="collapse"><i class=""></i> 栏目管理</a>
+    <ul id="columnMenu" class="nav nav-list collapse menu-second in">
+
+		<li class="<%= @css_admin_column ? 'menu-second-selected' : '' %>"><%= link_to "栏目列表", admin_columns_path %></li>
+		<li class="<%= @css_admin_column_space ? 'menu-second-selected' : '' %>"><%= link_to "栏目位列表", admin_column_spaces_path %></li>
+		<li class="<%= @css_admin_block ? 'menu-second-selected' : '' %>"><%= link_to "区块列表", admin_blocks_path %></li>
     </ul>
 </div>
 

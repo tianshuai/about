@@ -38,12 +38,12 @@ class Admin::ColumnsController < Admin::BaseController
 		file_name = file.original_filename
 		user_id = params[:user_id].to_i
         #上传
-        result = ImageUnit::Upload.save_asset(file_temp,3, { user_id: user_id, filename: file_name, img_kind: ['o','s'] })
+        result = ImageUnit::Upload.save_asset(file_temp,1, { user_id: user_id, filename: file_name, img_kind: ['o','s'] })
 		if result[:result]
           result[:name] = file_name
           result[:relateable_id] = @column.id
           result[:relateable_type] = 'Column'
-	  	  result[:kind] = 2
+	  	  result[:kind] = 1
           hash = collect_asset(result)
           asset = Asset.create(hash)
 		end
@@ -68,12 +68,12 @@ class Admin::ColumnsController < Admin::BaseController
 			file_name = file.original_filename
 			user_id = params[:user_id].to_i
 			#上传
-			result = ImageUnit::Upload.save_asset(file_temp,3, { user_id: user_id, filename: file_name, img_kind: ['o','s'] })
+			result = ImageUnit::Upload.save_asset(file_temp,1, { user_id: user_id, filename: file_name, img_kind: ['o','s'] })
 			if result[:result]
 			  result[:name] = file_name
 			  result[:relateable_id] = @column.id
 			  result[:relateable_type] = 'Column'
-	  	  	  result[:kind] = 2
+	  	  	  result[:kind] = 1
 			  hash = collect_asset(result)
 			  asset = Asset.create(hash)
 			end

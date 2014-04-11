@@ -2,7 +2,7 @@
     <td><label><%=check_box_tag "content[ids][]", b.id %></label></td>
     <td><%=b.id%></td>
 	<td><%= b.mark %></td>
-	<td><%= truncate(b.title, length: 12) %></td>
+	<td><%= truncate(b.name, length: 12) %></td>
 	<td><%= b.kind %></td>
 	<td><%=b.user.name if b.user.present?%></td>
 	<td><%=b.created_at.strftime("%y.%m.%d")%></td>

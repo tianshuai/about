@@ -1,4 +1,4 @@
 == README
 
 **环境：
-rails4.4, ruby2.1-head, mysql5.5+ 
+rails4.0.4, ruby2.1-head, mysql5.5+ 
